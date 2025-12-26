@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: adrienkerval
   repo: adrienkerval/voyons
   branch: main
 
@@ -17,4 +17,5 @@ collections:
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Contenu", name: "content", widget: "text" }
+
 
