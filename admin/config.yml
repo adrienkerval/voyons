@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TON_GITHUB/NOM_DU_DEPOT
+  repo: adrienkerval/voyons
   branch: main
 
 media_folder: "uploads"
@@ -17,3 +17,4 @@ collections:
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Contenu", name: "content", widget: "text" }
+
