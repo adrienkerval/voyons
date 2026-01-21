@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>InfoPop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>CANOHES - 2026</h1>
+  
+</header>
+
+<main id="articles"></main>
+
+<footer>© 2026 Info Canohes</footer>
+
+<script>
+fetch("content/posts.json")
+  .then(r => r.json())
+  .then(posts => {
+    const c = document.getElementById("articles");
+    posts.reverse().forEach(p => {
+      const a = document.createElement("article");
+
+      // Titre + contenu
+      let html = `<h2>${p.title}</h2><p>${p.content}</p>`;
+
+      // Images (si présentes)
+      if (Array.isArray(p.images)) {
+        html += `<div class="gallery">`;
+        p.images.forEach(img => {
+          html += `<img src="${img}" alt="">`;
+        });
+        html += `</div>`;
+      }
+
+      a.innerHTML = html;
+      c.appendChild(a);
+    });
+  });
+</script>
+
+</body>
+</html>
